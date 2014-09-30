@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 
 RUN apt-get update && \
-    apt-get install -y vim htop && \
+    apt-get install -y vim htop git-core && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN echo export CLICOLOR=1 >> /etc/bash.bashrc
