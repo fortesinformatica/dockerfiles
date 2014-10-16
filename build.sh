@@ -9,7 +9,6 @@ build_dir () {
   cd ..
 }
 
-build_dir "ubuntu"
 build_dir "java"
 build_dir "jruby"
 build_dir "jruby_swftools"

@@ -1,4 +1,4 @@
-FROM fortes/ubuntu
+FROM dockerfile/ubuntu
 
 WORKDIR /
 
