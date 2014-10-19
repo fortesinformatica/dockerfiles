@@ -6,17 +6,16 @@ RUN apt-get update && apt-get install -y python-software-properties software-pro
 
 USER root
 
+WORKDIR /
+
 RUN echo "host all  all    0.0.0.0/0  trust" >> /etc/postgresql/9.3/main/pg_hba.conf
 RUN echo "listen_addresses='*'" >> /etc/postgresql/9.3/main/postgresql.conf
 
-ADD start_postgres.sh /start_postgres.sh
-RUN chmod +x /start_postgres.sh
+ADD pg_start /usr/bin/pg_start
+RUN chmod +x /usr/bin/pg_start
  
-WORKDIR /
-
 EXPOSE 5432
 
 VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql"]
 
-#CMD ["/usr/lib/postgresql/9.3/bin/postgres", "-D", "/var/lib/postgresql/9.3/main", "-c", "config_file=/etc/postgresql/9.3/main/postgresql.conf"]
-CMD ["/start_postgres.sh"]
+CMD ["/usr/bin/pg_start"]
