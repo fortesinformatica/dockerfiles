@@ -10,7 +10,8 @@ RUN echo "host all  all    0.0.0.0/0  trust" >> /etc/postgresql/9.3/main/pg_hba.
 RUN echo "listen_addresses='*'" >> /etc/postgresql/9.3/main/postgresql.conf
 
 ADD start_postgres.sh /start_postgres.sh
-
+RUN chmod +x /start_postgres.sh
+ 
 WORKDIR /
 
 EXPOSE 5432
@@ -18,4 +19,4 @@ EXPOSE 5432
 VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql"]
 
 #CMD ["/usr/lib/postgresql/9.3/bin/postgres", "-D", "/var/lib/postgresql/9.3/main", "-c", "config_file=/etc/postgresql/9.3/main/postgresql.conf"]
-CMD ["bash", "start_postgres.sh"]
+CMD ["/start_postgres.sh"]
