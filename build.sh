@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 build_dir () {
   local dir=$1
