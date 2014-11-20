@@ -17,4 +17,7 @@ RUN apt-get update && \
     gem install bundler && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+RUN locale-gen pt_BR.UTF-8
+ENV LANG pt_BR.UTF-8
+
 CMD ["bash"]
