@@ -5,9 +5,9 @@ WORKDIR /
 RUN apt-get update && \
     apt-get -qy install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev \
     libcurl4-openssl-dev python-software-properties libpq-dev libsqlite3-dev libxml2-dev libxslt1-dev && \
-    curl -O http://ftp.ruby-lang.org/pub/ruby/ruby-2.0.0-p481.tar.gz && \
-    tar -xzvf ruby-2.0.0-p481.tar.gz && \
-    cd ruby-2.0.0-p481 && \
+    curl -O http://ftp.ruby-lang.org/pub/ruby/ruby-2.1.5.tar.gz && \
+    tar -xzvf ruby-2.1.5.tar.gz && \
+    cd ruby-2.1.5 && \
     ./configure --disable-install-doc && \
     make && \
     make install && \
