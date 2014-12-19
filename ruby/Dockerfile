@@ -2,17 +2,19 @@ FROM dockerfile/ubuntu
 
 WORKDIR /
 
+ENV RUBY ruby-2.1.5
+
 RUN apt-get update && \
     apt-get -qy install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev \
     libcurl4-openssl-dev python-software-properties libpq-dev libsqlite3-dev libxml2-dev libxslt1-dev && \
-    curl -O http://ftp.ruby-lang.org/pub/ruby/ruby-2.1.5.tar.gz && \
-    tar -xzvf ruby-2.1.5.tar.gz && \
-    cd ruby-2.1.5 && \
+    curl -O http://ftp.ruby-lang.org/pub/ruby/$RUBY.tar.gz && \
+    tar -xzvf $RUBY.tar.gz && \
+    cd $RUBY && \
     ./configure --disable-install-doc && \
     make && \
     make install && \
     cd .. && \
-    rm -rf ruby-2.0.0-p481* && \
+    rm -rf $RUBY* && \
     gem update --system && \
     gem install bundler && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
