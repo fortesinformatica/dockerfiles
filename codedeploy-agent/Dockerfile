@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:14.04
 MAINTAINER Marlus Saraiva <marlus.saraiva@gmail.com>
 
 RUN apt-get update && \
