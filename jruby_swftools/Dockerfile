@@ -1,4 +1,4 @@
-FROM fortes/jruby
+FROM fortes/jruby:1.7.14
 
 WORKDIR /
 
