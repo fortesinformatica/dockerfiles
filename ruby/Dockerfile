@@ -16,7 +16,7 @@ RUN apt-get update && \
     cd .. && \
     rm -rf $RUBY* && \
     gem update --system && \
-    gem install bundler && \
+    gem install bundler -v 1.10.6 && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN locale-gen pt_BR.UTF-8
