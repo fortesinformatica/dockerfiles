@@ -2,7 +2,7 @@ FROM ubuntu:14.04
 
 WORKDIR /
 
-ENV RUBY ruby-2.2.1
+ENV RUBY ruby-2.2.3
 
 RUN apt-get update && \
     apt-get -qy install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libffi-dev \
