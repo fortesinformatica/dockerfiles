@@ -2,7 +2,7 @@ FROM ubuntu:14.04
 
 WORKDIR /
 
-ENV RUBY ruby-2.2.3
+ENV RUBY ruby-2.2.8
 
 RUN apt-get update && \
     apt-get -qy install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libffi-dev \
@@ -15,8 +15,13 @@ RUN apt-get update && \
     make install && \
     cd .. && \
     rm -rf $RUBY* && \
-    gem update --system && \
-    gem install bundler -v 1.10.6 && \
+    echo 'gem: --no-document' >> ~/.gemrc && \
+    curl -O https://rubygems.org/gems/rubygems-update-2.6.14.gem && \
+    gem install --local rubygems-update-2.6.14.gem && \
+    update_rubygems && \
+    rm rubygems-update-2.6.14.gem && \
+    gem uninstall rubygems-update -x && \
+    gem install bundler -v 1.15.4 && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN locale-gen pt_BR.UTF-8
