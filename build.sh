@@ -12,10 +12,8 @@ build_dir () {
 
 build_dir "java"
 build_dir "jruby"
-build_dir "jruby_swftools"
 build_dir "ruby"
 build_dir "awscli"
 build_dir "postgres"
-build_dir "flex-sdk"
 # So funciona na aws. Comentar se for rodar local.
 build_dir "codedeploy-agent"
