@@ -20,3 +20,6 @@ RUN gem install bundler -v 1.15.4
 RUN apt-get -y remove --purge curl && \
     apt-get -y autoremove && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN locale-gen pt_BR.UTF-8
+ENV LANG pt_BR.UTF-8
