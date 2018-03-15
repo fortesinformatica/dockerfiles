@@ -23,7 +23,6 @@ RUN apt-get update && \
     gem uninstall rubygems-update -x && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN locale-gen pt_BR.UTF-8
-ENV LANG pt_BR.UTF-8
+ENV LANG C.UTF-8
 
 CMD ["bash"]
