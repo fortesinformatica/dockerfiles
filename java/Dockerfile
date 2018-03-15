@@ -1,9 +1,10 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 
 WORKDIR /
 
 RUN apt-get update && \
-    apt-get install -y openjdk-7-jre && \
+    apt-get install -y openjdk-8-jre && \
+    apt-get -y autoremove && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 CMD ["bash"]

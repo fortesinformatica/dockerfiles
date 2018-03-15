@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t="fortes/jruby:1.7.16.2" .
+docker build -t="fortes/jruby:9.1.16.0" .

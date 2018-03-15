@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 
 WORKDIR /
 
@@ -6,7 +6,8 @@ ENV RUBY ruby-2.4.3
 
 RUN apt-get update && \
     apt-get -qy install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libffi-dev \
-    libcurl4-openssl-dev python-software-properties libpq-dev libsqlite3-dev libxml2-dev libxslt1-dev libicu-dev && \
+    libcurl4-openssl-dev python-software-properties libpq-dev libsqlite3-dev libxml2-dev libxslt-dev pkg-config \
+    libicu-dev tzdata && \
     curl -O http://cache.ruby-lang.org/pub/ruby/2.4/$RUBY.tar.gz && \
     tar -xzvf $RUBY.tar.gz && \
     cd $RUBY && \
@@ -16,11 +17,13 @@ RUN apt-get update && \
     cd .. && \
     rm -rf $RUBY* && \
     echo 'gem: --no-document' >> ~/.gemrc && \
-    curl -O https://rubygems.org/gems/rubygems-update-2.7.3.gem && \
-    gem install --local rubygems-update-2.7.3.gem && \
+    curl -O https://rubygems.org/gems/rubygems-update-2.7.6.gem && \
+    gem install --local rubygems-update-2.7.6.gem && \
     update_rubygems && \
-    rm rubygems-update-2.7.3.gem && \
+    rm rubygems-update-2.7.6.gem && \
     gem uninstall rubygems-update -x && \
+    apt-get -y remove --purge curl && \
+    apt-get -y autoremove && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ENV LANG C.UTF-8
