@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 
 WORKDIR /
 
-ENV RUBY ruby-2.4.3
+ENV RUBY ruby-2.4.4
 
 RUN apt-get update && \
     apt-get -qy install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libffi-dev \
@@ -17,10 +17,10 @@ RUN apt-get update && \
     cd .. && \
     rm -rf $RUBY* && \
     echo 'gem: --no-document' >> ~/.gemrc && \
-    curl -O https://rubygems.org/gems/rubygems-update-2.7.6.gem && \
-    gem install --local rubygems-update-2.7.6.gem && \
+    curl -O https://rubygems.org/gems/rubygems-update-2.7.7.gem && \
+    gem install --local rubygems-update-2.7.7.gem && \
     update_rubygems && \
-    rm rubygems-update-2.7.6.gem && \
+    rm rubygems-update-2.7.7.gem && \
     gem uninstall rubygems-update -x && \
     apt-get -y remove --purge curl && \
     apt-get -y autoremove && \
