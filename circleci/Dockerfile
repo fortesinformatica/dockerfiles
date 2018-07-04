@@ -14,7 +14,7 @@ ENV PATH $NODEJS_HOME:$PATH
 RUN apt-get update && \
     apt-get -qy install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libffi-dev \
     libcurl4-openssl-dev python-software-properties python-pip libpq-dev libsqlite3-dev libxml2-dev libxslt-dev pkg-config \
-    libicu-dev tzdata && \
+    libicu-dev tzdata groff-base jq && \
     pip install awscli --upgrade && \
     apt-get install -y openjdk-8-jre && \
     apt-get install -y --no-install-recommends curl postgresql-client && \
