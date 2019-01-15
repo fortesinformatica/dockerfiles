@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t="fortes/circleci:5" .
+docker build -t="fortes/circleci:6" .
