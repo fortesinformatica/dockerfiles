@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t="fortes/circleci:9" .
+docker build -t="fortes/circleci:2020-01" .
