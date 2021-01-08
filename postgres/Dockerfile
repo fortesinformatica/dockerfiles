@@ -20,7 +20,7 @@ RUN chmod +x /usr/bin/pg_start
 
 RUN mkdir -p /var/run/postgresql/9.3-main.pg_stat_tmp
 RUN chown postgres:postgres /var/run/postgresql/9.3-main.pg_stat_tmp
- 
+
 EXPOSE 5432
 
 VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql"]

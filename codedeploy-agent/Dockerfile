@@ -1,10 +1,10 @@
 FROM ubuntu:14.04
-MAINTAINER Marlus Saraiva <marlus.saraiva@gmail.com>
+LABEL maintainer="tiagoefmoraes@gmail.com"
 
 RUN apt-get update && \
-    apt-get -qy install python-pip groff-base ruby2.0 gdebi curl docker.io && \
-    pip install awscli && \
-    apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+  apt-get -qy install python-pip groff-base ruby2.0 gdebi curl docker.io && \
+  pip install awscli && \
+  apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN mkdir -p /opt/codedeploy-agent
 
