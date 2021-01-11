@@ -2,9 +2,9 @@ FROM ubuntu:16.04
 
 WORKDIR /
 
-ENV RUBY ruby-2.5.3
-ENV RUBYGEMS_VERSION 3.0.2
-ENV BUNDLER_VERSION 2.0.1
+ENV RUBY ruby-2.5.8
+ENV RUBYGEMS_VERSION 3.2.4
+ENV BUNDLER_VERSION 2.2.4
 
 RUN apt-get update && \
   apt-get -y upgrade && \
