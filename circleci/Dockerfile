@@ -17,7 +17,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone &
   apt-get -qy upgrade && \
   apt-get -qy install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libffi-dev \
   libcurl4-openssl-dev python-pip libpq-dev libsqlite3-dev libxml2-dev libxslt-dev pkg-config \
-  libicu-dev tzdata groff-base jq lsb-release && \
+  libicu-dev tzdata groff-base jq lsb-release rsync && \
   pip install awscli --upgrade && \
   apt-get install -y openjdk-8-jre && \
   curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - && \
