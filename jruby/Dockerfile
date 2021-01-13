@@ -1,4 +1,4 @@
-FROM fortes/java:8_2021-01
+FROM fortes/java:8_2021-01_ubuntu_18
 
 ENV JRUBY_VERSION 9.2.14.0
 ENV RUBYGEMS_VERSION 3.2.4
