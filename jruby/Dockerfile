@@ -1,8 +1,8 @@
 FROM fortes/java:8_2021-01_ubuntu_18
 
 ENV JRUBY_VERSION 9.2.14.0
-ENV RUBYGEMS_VERSION 3.2.4
-ENV BUNDLER_VERSION 2.2.4
+ENV RUBYGEMS_VERSION 3.2.5
+ENV BUNDLER_VERSION 2.2.5
 ENV PATH /opt/jruby-$JRUBY_VERSION/bin:$PATH
 
 RUN apt-get update && apt-get install -y --no-install-recommends curl && \
