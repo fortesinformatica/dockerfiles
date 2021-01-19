@@ -27,8 +27,8 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone &
   apt-get update && \
   apt-get install -y --no-install-recommends postgresql-client-10 && \
   apt-get install -y google-chrome-stable && \
-  curl -L https://github.com/postmodern/ruby-install/archive/v0.7.0.tar.gz | tar -xzv -C . && \
-  cd ruby-install-0.7.0/ && make install && cd .. && rm -rf ruby-install-0.7.0 && \
+  curl -L https://github.com/postmodern/ruby-install/archive/v0.8.1.tar.gz | tar -xzv -C . && \
+  cd ruby-install-0.8.1/ && make install && cd .. && rm -rf ruby-install-0.8.1 && \
   curl -L https://github.com/postmodern/chruby/archive/v0.3.9.tar.gz | tar -xzv -C . && \
   cd chruby-0.3.9/ && ./scripts/setup.sh && cd .. && rm -rf chruby-0.3.9 && \
   echo "source /usr/local/share/chruby/chruby.sh" >> /root/.bashrc && \
