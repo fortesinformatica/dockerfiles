@@ -5,4 +5,4 @@ set -x
 
 docker build -t="fortes/circleci:building" .
 docker run --rm -v "$PWD:/test" "fortes/circleci:building" bash /test/test.sh
-docker tag "fortes/circleci:building" "fortes/circleci:2021-01_c"
+docker tag "fortes/circleci:building" "fortes/circleci:2021-01_ubuntu_18_b"
