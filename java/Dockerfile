@@ -4,7 +4,7 @@ WORKDIR /
 
 RUN apt-get update && \
   apt-get -y upgrade && \
-  apt-get install -y openjdk-8-jre && \
+  apt-get install -y openjdk-11-jre && \
   apt-get -y autoremove && \
   apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
