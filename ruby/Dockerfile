@@ -2,9 +2,9 @@ FROM ubuntu:18.04
 
 WORKDIR /
 
-ENV RUBY ruby-2.7.2
-ENV RUBYGEMS_VERSION 3.2.15
-ENV BUNDLER_VERSION 2.2.15
+ENV RUBY ruby-2.7.4
+ENV RUBYGEMS_VERSION 3.2.28
+ENV BUNDLER_VERSION 2.2.28
 ENV TZ=America/Fortaleza
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && \
