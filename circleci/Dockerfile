@@ -7,7 +7,7 @@ ENV JRUBY_VERSION 9.3.3.0
 ENV RUBYGEMS_VERSION 3.2.28
 ENV BUNDLER_VERSION 2.2.28
 ENV NODE_VERSION 16.16.0
-ENV YARN_VERSION 1.22.5
+ENV YARN_VERSION 1.22.19
 ENV NODEJS_HOME /usr/local/lib/nodejs/node-v$NODE_VERSION/bin
 ENV PATH $NODEJS_HOME:$PATH
 ENV TZ=America/Fortaleza
@@ -42,8 +42,8 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone &
   mkdir /usr/local/lib/nodejs && \
   curl https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz | tar -xJv -C /usr/local/lib/nodejs/ && \
   mv /usr/local/lib/nodejs/node-v$NODE_VERSION-linux-x64 /usr/local/lib/nodejs/node-v$NODE_VERSION && \
-  npm install yarn@$YARN_VERSION -g && \
-  npm install check-engines -g && \
+  npm install yarn@$YARN_VERSION --location=global && \
+  npm install check-engines --location=global && \
   apt-get -y autoremove && \
   apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
