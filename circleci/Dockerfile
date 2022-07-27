@@ -42,6 +42,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone &
   mkdir /usr/local/lib/nodejs && \
   curl https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz | tar -xJv -C /usr/local/lib/nodejs/ && \
   mv /usr/local/lib/nodejs/node-v$NODE_VERSION-linux-x64 /usr/local/lib/nodejs/node-v$NODE_VERSION && \
+  npm install --location=global npm@latest && \
   npm install yarn@$YARN_VERSION --location=global && \
   npm install check-engines --location=global && \
   apt-get -y autoremove && \
