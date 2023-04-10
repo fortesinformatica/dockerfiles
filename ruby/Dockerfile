@@ -2,9 +2,9 @@ FROM ubuntu:18.04
 
 WORKDIR /
 
-ENV RUBY ruby-2.7.4
-ENV RUBYGEMS_VERSION 3.2.28
-ENV BUNDLER_VERSION 2.2.28
+ENV RUBY ruby-3.2.2
+ENV RUBYGEMS_VERSION 3.4.6
+ENV BUNDLER_VERSION 2.4.10
 ENV TZ=America/Fortaleza
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && \
@@ -17,7 +17,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone &
   sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" >> /etc/apt/sources.list.d/pgdg.list' && \
   apt-get update && \
   apt-get -y upgrade && \
-  curl -O https://cache.ruby-lang.org/pub/ruby/2.7/$RUBY.tar.gz && \
+  curl -O https://cache.ruby-lang.org/pub/ruby/3.2/$RUBY.tar.gz && \
   tar -xzvf $RUBY.tar.gz && \
   cd $RUBY && \
   ./configure --disable-install-doc && \

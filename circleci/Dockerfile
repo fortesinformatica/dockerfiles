@@ -2,10 +2,12 @@ FROM ubuntu:18.04
 
 WORKDIR /
 
-ENV RUBY_VERSION 2.7.5
+ENV RUBY_VERSION 3.2.2
+ENV RUBYGEMS_VERSION 3.4.6
+ENV BUNDLER_VERSION 2.4.10
 ENV JRUBY_VERSION 9.3.3.0
-ENV RUBYGEMS_VERSION 3.2.28
-ENV BUNDLER_VERSION 2.2.28
+ENV JRUBY_RUBYGEMS_VERSION 3.2.28
+ENV JRUBY_BUNDLER_VERSION 2.2.28
 ENV NODE_VERSION 16.18.1
 ENV YARN_VERSION 1.22.19
 ENV NODEJS_HOME /usr/local/lib/nodejs/node-v$NODE_VERSION/bin
@@ -38,7 +40,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone &
   ruby-install --jobs=$(nproc) -c ruby $RUBY_VERSION --no-install-deps -- --disable-install-doc && \
   /bin/bash -c 'source /etc/profile.d/chruby.sh && chruby ruby && gem update --system ${RUBYGEMS_VERSION} && gem install bundler:$BUNDLER_VERSION --force' && \
   ruby-install --jobs=$(nproc) -c jruby $JRUBY_VERSION --no-install-deps -- --disable-install-doc && \
-  /bin/bash -c 'source /etc/profile.d/chruby.sh && chruby jruby && gem update --system ${RUBYGEMS_VERSION} && gem install bundler:$BUNDLER_VERSION' && \
+  /bin/bash -c 'source /etc/profile.d/chruby.sh && chruby jruby && gem update --system ${JRUBY_RUBYGEMS_VERSION} && gem install bundler:$JRUBY_BUNDLER_VERSION' && \
   mkdir /usr/local/lib/nodejs && \
   curl https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz | tar -xJv -C /usr/local/lib/nodejs/ && \
   mv /usr/local/lib/nodejs/node-v$NODE_VERSION-linux-x64 /usr/local/lib/nodejs/node-v$NODE_VERSION && \

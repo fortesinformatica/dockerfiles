@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t="fortes/ruby:2.7.4" .
+docker build -t="fortes/ruby:3.2.2" .
