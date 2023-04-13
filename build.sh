@@ -10,11 +10,6 @@ build_dir () {
   cd ..
 }
 
-build_dir "java"
-build_dir "jruby"
-build_dir "ruby"
-build_dir "circleci"
-# build_dir "awscli"
-# build_dir "postgres"
-# So funciona na aws. Comentar se for rodar local.
-# build_dir "codedeploy-agent"
+build_dir "awscli"
+build_dir "postgres"
+build_dir "codedeploy-agent"
